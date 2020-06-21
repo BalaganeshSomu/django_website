@@ -1,0 +1,24 @@
+{% extends "home/base.html" %}
+{% block content %}
+<h2>
+    &nbsp PRODUCTS
+</h2>
+
+{% for product in products %}
+    <article class="media content-section">
+        <div class="media-body">
+        <h5><b>{{ product.name }}</b></h5>
+        <figure>
+        <img class="img-thumbnail" 
+             src="{{ product.image.url }}">
+        </figure>
+        <h5><b>DESCRIPTION</b></h5>
+        <p class="article-content">{{ product.description }}</p>
+        <h5><b>AVAILABILITY</b></h5>
+        <p class="article-content">{{ product.available }}</p>  
+        <a class="btn btn-outline-dark mb-4"href="{% url 'home-contact'%}">ORDER</a>
+        </div>
+
+    </article>
+{% endfor %}
+{% endblock content %}

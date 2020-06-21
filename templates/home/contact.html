@@ -1,0 +1,20 @@
+{% extends "home/base.html" %}
+{% block content %}
+<!-- enter your details here-->
+{% for contact in contacts %}
+<article class="media content-section">
+    <div class="media-body">
+    <h4><b>ADDRESS</b></h4>
+    <p>{{ contact.address }}</p>
+    {% if contact.addr_link != "#"%} 
+    <p>{{ contact.addr_link }}</p>
+    {%  endif %}
+    <h4><b>PHONE NUMBER</b></h4>
+    <p>{{ contact.contact_number }}</p>
+    <h4><b>EMAIL</b></h4>
+    <p>{{ contact.email }}</p>      
+    </div>
+</article>
+{% endfor %}
+{% endblock content %}
+

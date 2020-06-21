@@ -1,0 +1,17 @@
+{% extends "home/base.html" %}
+{% block content %}
+<!-- enter your details here-->
+{% for about in abouts %}
+<article class="media content-section">
+    <div class="media-body">
+    <h4><b>ABOUT</b></h4>
+    <p>{{ about.about }}</p>    
+    {% if about.other_links != "#"%} 
+        <h4><b>OTHER LINKS</b></h4>
+        <p>{{ about.other_links }}</p> 
+    {% endif %}
+    </div>
+</article>
+{% endfor %}
+{% endblock content %}
+
